@@ -1,0 +1,11 @@
+[
+  {
+    "name": "indicator_often_abused_discord",
+    "expects_match": ["indicator_often_abused_discord"],
+    "expects_no_match": [],
+    "data": {
+      "al_file_name": "data",
+      "al_network_static_domain": ["cdn.discordapp.com"]
+    }
+  }
+]

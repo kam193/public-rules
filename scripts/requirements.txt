@@ -1,0 +1,4 @@
+yara-python
+yaramod
+termcolor
+assemblyline-core

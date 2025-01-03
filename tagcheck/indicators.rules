@@ -1,0 +1,30 @@
+private rule not_information_file {
+
+	meta:
+		version = "1.0"
+		description = "Check filename against known files causing false positives"
+		source = "kam193"
+		author = "kam193"
+		status = "RELEASED"
+		sharing = "TLP:CLEAR"
+		category = "TL1"
+
+	condition:
+		not al_file_name matches /.*\/(METADATA|PKG-INFO|README\.md|README\.rst|README\.txt)$/
+}
+
+rule indicator_often_abused_discord {
+
+	meta:
+		version = "1.0"
+		description = "Discord CDN is often used to host malware"
+		source = "kam193"
+		author = "kam193"
+		status = "RELEASED"
+		sharing = "TLP:CLEAR"
+		category = "TL3"
+
+	condition:
+		not_information_file and
+		al_network_static_domain matches /\bcdn\.discordapp\.com\b/
+}
