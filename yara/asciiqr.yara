@@ -12,7 +12,8 @@ rule Possible_Unicode_QR_utf8
 		$block3 = {e2 96 84}
 
 	condition:
-		all of ($block*) and (#block1 + #block2 + #block3) > 50
+		(all of ($block*) and (#block1 + #block2 + #block3) > 50) or
+		#block1 > 150
 }
 
 rule Possible_Unicode_QR_html
@@ -29,5 +30,6 @@ rule Possible_Unicode_QR_html
 		$block3 = "&lhblk;"
 
 	condition:
-		all of ($block*) and (#block1 + #block2 + #block3) > 50
+		(all of ($block*) and (#block1 + #block2 + #block3) > 50) or
+		#block1 > 150
 }
