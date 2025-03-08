@@ -59,7 +59,7 @@ YARA_EXTERNALS = [
 def externals_to_dict(externals: list[str]) -> dict[str, str | int]:
     int_fields = ["file_size"]
     return {
-        f'al_{x.replace(".", "_")}': "" if x not in int_fields else 0 for x in externals
+        f"al_{x.replace('.', '_')}": "" if x not in int_fields else 0 for x in externals
     }
 
 
